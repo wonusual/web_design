@@ -1,0 +1,287 @@
+/*노멀라이징*/
+* {
+    padding: 0;
+    margin: 0;
+}
+
+ul,
+li {
+    list-style: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    display: block;
+}
+
+
+
+
+
+/*라이브러리*/
+@font-face {
+    font-family: 'NanumSquareRoundOTFR';
+    src: url(../webfont/NanumSquareRoundOTFR.otf);
+}
+
+
+
+
+
+/*스타일라이징*/
+
+/*redesign*/
+#wrap {
+    width: 768px;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+}
+
+#wrap .bg {
+    width: 100%;
+}
+
+#wrap .shortcut {
+    position: absolute;
+    top: 385px;
+    left: 50px;
+    font-family: 'NanumSquareRoundOTFR';
+    font-weight: bold;
+    border: 1px solid black;
+    z-index: 1;
+}
+
+#wrap .shortcut:after {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #85b24a;
+    animation-name: move;
+    animation-duration: 1s;
+    animation-direction: alternate;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    z-index: -1;
+}
+
+@keyframes move {
+    to {
+        left: 109px;
+    }
+}
+
+#wrap .shortcut a {
+    padding: 5px 10px;
+}
+
+
+/*Leaflets*/
+.card16_wrap,
+.card17_wrap {
+    position: absolute;
+    top: 1172px;
+}
+
+.card16_wrap {
+    left: 27px;
+}
+
+.card17_wrap {
+    left: 272px;
+}
+
+.card {
+    position: relative;
+    width: 235px;
+    height: 357px;
+    backface-visibility: visible;
+    perspective: 1000px;
+}
+
+.card > div {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: 0.5px;
+    transition: 1s;
+}
+
+.card16 > .front {
+    background-image: url(../images/caleb16_f.png);
+    z-index: 2;
+}
+
+.card16 > .back {
+    background-image: url(../images/caleb16_b.png);
+    transform: rotateY(180deg);
+    z-index: 1;
+}
+
+
+.card17 > .front {
+    background-image: url(../images/caleb17_f.png);
+    z-index: 2;
+}
+
+.card17 > .back {
+    background-image: url(../images/caleb17_b.png);
+    transform: rotateY(180deg);
+    z-index: 1;
+}
+
+
+.card:hover > .front {
+    transform: rotateY(540deg);
+    z-index: 1;
+}
+
+.card:hover > .back {
+    transform: rotateY(720deg);
+    z-index: 2;
+}
+
+/*sns card news*/
+
+.sns_card_news {
+    width: 100%;
+    height: 550px;
+    position: relative;
+}
+
+.sns_card_news > p {
+    font-family: 'NanumSquareRoundOTFR';
+    font-size: 14px;
+    line-height: 27px;
+    position: absolute;
+    top: 220px;
+    left: 10px;
+}
+
+.sns_card_news span {
+    font-family: 'NanumSquareRoundOTFR';
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 20px;
+    position: absolute;
+    top: 284px;
+    left: 15px;
+}
+
+.sns_card_wrap {
+    position: absolute;
+    top: 30px;
+    right: 3px;
+}
+
+
+.slide_wrap {
+    width: 442px;
+    height: 442px;
+    background-color: #fff;
+    position: relative;
+    border: 1px solid black;
+}
+
+
+/*
+.slide_wrap:before {
+    content: "";
+    display: block;
+    clear: both;
+    width: 442px;
+    height: 442px;
+    background-color: #ffd506;
+    position: absolute;
+    left: -7px;
+    top: -7px;
+    z-index: -1;
+}
+*/
+
+.slide_wrap:after {
+    content: "";
+    display: block;
+    clear: both;
+    width: 450px;
+    height: 40px;
+    background-image: url(../images/insta_btm.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0;
+    bottom: -43px;
+    z-index: -1;
+}
+
+.slide_wrap img {
+    width: 100%;
+}
+
+.slide_wrap > .fa-chevron-left {
+    position: absolute;
+    top: 50%;
+    left: 7px;
+    z-index: 99;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.slide_wrap > .fa-chevron-right {
+    position: absolute;
+    top: 50%;
+    right: 7px;
+    z-index: 99;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.slide_wrap .slick-dots {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.slide_wrap .slick-dots li button:before {
+    content: "";
+    display: none;
+}
+
+.slide_wrap .slick-dots li button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    padding: 0;
+    opacity: 0.4;
+    background-color: black;
+}
+
+.slide_wrap .slick-dots li button:hover {
+    opacity: 1;
+    background-color: #ffd506;
+}
+
+.slide_wrap .slick-dots li.slick-active button {
+    background-color: dodgerblue;
+    opacity: 1;
+    transition: 1s;
+}
+
+.slide_wrap .slick-dots li {
+    width: auto;
+    height: auto;
+    margin: 0 5px;
+}
+
+.line{
+    width: 100%;
+    height: 15px;
+    background-color: #ffd506;
+}
